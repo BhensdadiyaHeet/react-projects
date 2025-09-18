@@ -11,7 +11,7 @@ export default function EventHandler() {
   const [submittedData, setSubmittedData] = useState(null);
 
   const handleSubmit = () => {
-    if (!name || !age || !email || !password || !conformpassword || !city) return alert("⚠️ Please fill all fields!");
+    if (!name || !age || !email || !city || !password || !conformpassword) return alert("⚠️ Please fill all fields!");
     if (password !== conformpassword) return alert("Passwords do not match!");
     if (!email.includes("@")) return alert("Invalid Email!"); 
 
@@ -125,7 +125,7 @@ export default function EventHandler() {
         >
           Submit
         </button>
-      </div>
+      </div> 
 
     
       {submittedData && (
@@ -140,13 +140,13 @@ export default function EventHandler() {
             <b>Email :</b> {submittedData.email}
           </p>
           <p>
+            <b>City :</b> {submittedData.city}
+          </p>
+          <p>
             <b>Password :</b> {submittedData.password}
           </p>
           <p>
             <b>Confirm Password :</b> {submittedData.conformpassword}
-          </p>
-          <p>
-            <b>City :</b> {submittedData.city}
           </p>
         </div>
       )}
